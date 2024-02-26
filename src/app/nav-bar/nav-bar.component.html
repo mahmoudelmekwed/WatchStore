@@ -1,0 +1,48 @@
+<div class="nav-area">
+    <!-- Logo linking to the homepage -->
+    <a class="logo" routerLink="/" routerLinkActive="active" >
+        <img src="/assets/images/logo.png" alt="Time Redfined">
+    </a>
+    <!-- Search area -->
+    <div class="search-area">
+        <form action="/search">
+            <input type="text" name="product_to_find" id="product_to_find" placeholder="Search products">
+            <button type="submit" id="submitButton">Search</button>
+        </form> 
+    </div>
+    <!-- Navigation menu -->
+    <nav>   
+        <ul>
+            <li><a routerLink='/' routerLinkActive="active" >Home</a></li>
+            <!-- Dropdown menu for user account -->
+            <li class="dropdown-menu" (click)="toggleDropdown()">
+                <div>
+                    <div  *ngIf="dumyUser">
+                        <i class="fa-regular fa-user"></i>
+                        Hi {{ 'userName' }}
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div *ngIf="!dumyUser">
+                        <i class="fa-regular fa-user"></i>
+                        Account
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </div>
+                <ul class="toggle-menu closed" [class.closed]="!isDropdownOpen">
+                        <li class="nav-item" *ngIf="!dumyUser" (click)="dumyUser = !dumyUser">
+                        <a class="nav-link"
+                        routerLink="/login">Log In</a>
+                        </li>
+                        <li class="nav-item" *ngIf="dumyUser" (click)="dumyUser = !dumyUser">
+                        <a class="nav-link"
+                            (click)="logOut()">Log Out</a>
+                        </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- Cart area -->
+    <div class="cart-area">
+        <a routerLink="/cart"><i class="fa-solid fa-cart-shopping"></i><span id="cart-items-count">{{total_quantity}}</span>Cart</a>
+    </div>
+</div>

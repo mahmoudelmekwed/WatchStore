@@ -1,0 +1,206 @@
+/* Global styles to reset default margin, padding, and set font-family */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: Arial, sans-serif; */
+}
+
+
+
+/* Styling for the navigation area */
+
+.nav-area {
+    background-color: #e6e6e6; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 20px;
+}
+
+/* Styling for the logo/image within the navigation area */
+
+.nav-area img {
+    height: 50px;
+    margin-right: 20px;
+}
+
+/* Styling for the search area */
+
+.search-area {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+/* Styling for the search form within the search area */
+
+.search-area form {
+    display: flex;
+    flex-grow: 1;
+}
+
+/* Styling for the text input within the search form */
+
+.search-area input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px 3px; 
+}
+
+/* Styling for the search button within the search area */
+
+.search-area button {
+    padding: 8px 16px;
+    background-color: #f90; 
+    color: white;
+    border: none;
+    border-radius:  3px 3px; 
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Hover effect for the search button */
+
+.search-area button:hover {
+    background-color: rgb(238, 162, 62); 
+}
+
+/* Styling for the navigation menu ul */
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+/* Styling for individual menu items (li) within the navigation menu */
+
+nav ul li {
+    margin: 0 10px;
+    color: #000;
+    cursor: pointer;
+    font-size: 1.2em; 
+}
+
+/* Hover effect for individual menu items (li) */
+
+nav ul li:hover {
+    color: #f90;
+}
+
+/* Styling for links (a) within individual menu items (li) */
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* Hover effect for links (a) within individual menu items (li) */
+
+nav ul li a:hover {
+    color: #f90;
+}
+
+/* Styling for dropdown menus */
+
+nav .dropdown-menu {
+    position: relative;
+}
+
+/* Styling for the toggle menu */
+
+nav .toggle-menu {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    top: 31px;
+    left: -11px;
+    border-radius: 5px;
+}
+
+/* Display toggle menu when opened */
+
+.toggle-menu.closed {
+    display: none;
+}
+
+/* Styling for individual items (li) within the toggle menu */
+
+.toggle-menu li {
+    padding: 8px 16px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Styling for links (a) within the toggle menu */
+
+.toggle-menu li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    font-size: 15px;
+    padding: 4px 14px;
+}
+
+/* Hover effect for links (a) within the toggle menu */
+
+.toggle-menu li a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Styling for the cart area in the navigation */
+
+.nav-area .cart-area a {
+    color: black; 
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    position: relative;
+}
+
+/* Hover effect for cart area */
+
+.nav-area .cart-area a:hover {
+    color: #f90;
+}
+
+/* Styling for the cart icon in the cart area */
+
+.nav-area .cart-area a i {
+    font-size: 23px;
+    margin-right: 12px;
+}
+
+/* Styling for the badge/count in the cart area */
+
+.nav-area .cart-area a span {
+    font-size: 15px;
+    padding: 2px 4px;
+    display: inline-block;
+    background-color: #f90;
+    border-radius: 50%;
+    position: absolute;
+    top: -12px;
+    left: 17px;
+}
+
+/* Hover effect for the badge/count in the cart area */
+
+.nav-area .cart-area a:hover span {
+    background-color: #444;
+}
+
+/* Additional styles for specific elements */
+
+.fa-solid {
+    margin-right: 5px;
+}

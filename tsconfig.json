@@ -30,4 +30,5 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   }
+  // ,"resolveJsonModule": true // Enable reading json on module
 }

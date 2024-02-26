@@ -1,0 +1,97 @@
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0;
+}
+
+/* Styling for individual product items */
+
+.products-container li {
+    list-style-type: none;
+    border: 1px solid #ddd;
+    margin: 30px;
+    padding: 10px 20px;
+    width: 250px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+/* Hover effect for individual product items */
+
+.products-container li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);
+}
+
+/* Styling for product images */
+
+.products-container img {
+    height: 250px;
+    width: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Styling for product name */
+
+.products-container h2 {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+/* Styling for product description */
+
+.products-container p {
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+/* Styling for product price */
+
+.products-container .price {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+/* Styling for the price span within the product */
+
+.products-container .price span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Styling for form labels within the product */
+
+.products-container form label {
+    font-size: 14px;
+}
+
+/* Styling for quantity dropdown within the product */
+
+.products-container form select {
+    padding: 4px 8px;
+    border-radius: 2px;
+    font-size: 14px;
+}
+
+/* Styling for the add to cart button within the product */
+
+.products-container .add-to-cart {
+    display: block;
+    padding: 8px 16px;
+    background-color: #f90; 
+    color: white;
+    border: none;
+    border-radius:  3px 3px; 
+    cursor: pointer;
+    margin: 12px auto 6px;
+}
+
+/* Hover effect for the add to cart button */
+
+.products-container .add-to-cart:hover {
+    background-color: rgb(238, 162, 62); 
+}

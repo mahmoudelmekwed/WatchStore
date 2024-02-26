@@ -1,0 +1,99 @@
+[
+    
+    {
+        "id": 1,
+        "image":"/assets/images/product1.png",
+        "name": "Timeless Elegance",
+        "price": 19.99,
+        "description": "A watch brand that speaks to the connoisseur of classic style, Timeless Elegance offers sophisticated timepieces with a nod to historical craftsmanship and enduring design.",
+        "quantity":1
+    },
+    {
+        "id": 2,
+        "image":"/assets/images/product2.png",
+        "name": "Urban Rhythm",
+        "price": 29.99,
+        "description": "Catering to the beat of the modern city life, Urban Rhythm's watches combine contemporary aesthetics with functional design, perfect for the metropolitan wearer.",
+        "quantity":1
+    },
+    {
+        "id": 3,
+        "image":"/assets/images/product3.png",
+        "name": "Horizon Timepieces",
+        "price": 29.99,
+        "description": "For the adventurers at heart, Horizon Timepieces are rugged, durable, and made to accompany you to the edge of the world and back, blending style with tenacity.",
+        "quantity":1
+    },
+    {
+        "id": 4,
+        "image":"/assets/images/product4.png",
+        "name": "Aeon Watches",
+        "price": 29.99,
+        "description": "Aeon Watches are the quintessence of modern luxury, featuring sleek designs and innovative technology for the forward-thinking individual.",
+        "quantity":1
+    },
+    {
+        "id": 5,
+        "image":"/assets/images/product5.png",
+        "name": "Vintique Watches",
+        "price": 29.99,
+        "description": "Vintique offers a collection of watches with a vintage touch, delivering timeless beauty with a dash of nostalgia for the past.",
+        "quantity":1
+    },
+    {
+        "id": 6,
+        "image":"/assets/images/product6.png",
+        "name": "Pinnacle Precision",
+        "price": 29.99,
+        "description": "Precision isn't just a word, it's a promise. Pinnacle Precision timepieces are crafted for accuracy, functionality, and unparalleled elegance.t",
+        "quantity":1
+    },
+    {
+        "id": 7,
+        "image":"/assets/images/product7.png",
+        "name": "Gala Time",
+        "price": 29.99,
+        "description": "Gala Time celebrates moments with watches that are as exquisite as they are precise, making every second a grand experience.",
+        "quantity":1
+    },
+    {
+        "id": 8,
+        "image":"/assets/images/product8.png",
+        "name": "Momentum Masters",
+        "price": 29.99,
+        "description": "For those who live life on the go, Momentum Masters provides robust and stylish wristwatches that keep up with fast-paced lifestyles.",
+        "quantity":1
+    },
+    {
+        "id": 9,
+        "image":"/assets/images/product9.png",
+        "name": "Twilight Tones",
+        "price": 29.99,
+        "description": "Twilight Tones captures the magic of dusk with its line of watches, offering subtle elegance and a peaceful charm in its design.",
+        "quantity":1
+    },
+    {
+        "id": 10,
+        "image":"/assets/images/product10.png",
+        "name": "Celestia Craft",
+        "price": 29.99,
+        "description": "Celestia Craft's watches are for dreamers who reach for the stars, featuring celestial-inspired designs that are both ethereal and grounded in superior craftsmanship",
+        "quantity":1
+    },
+    {
+        "id": 11,
+        "image":"/assets/images/product11.png",
+        "name": "Terra Firma Timekeepers",
+        "price": 29.99,
+        "description": "Inspired by the raw beauty of nature, Terra Firma Timekeepers are crafted for outdoor enthusiasts with a taste for earthy elements and durability.",
+        "quantity":1
+    },
+    {
+        "id": 12,
+        "image":"/assets/images/product12.png",
+        "name": "ChronoChic",
+        "price": 29.99,
+        "description": "ChronoChic brings fashion to the forefront with its stylish and contemporary watch designs that make a statement on any wrist.",
+        "quantity":1
+    }
+]
