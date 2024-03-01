@@ -5,7 +5,7 @@
     </a>
     <!-- Search area -->
     <div class="search-area">
-        <form action="/search">
+        <form action="/">
             <input type="text" name="product_to_find" id="product_to_find" placeholder="Search products">
             <button type="submit" id="submitButton">Search</button>
         </form> 
@@ -15,7 +15,7 @@
         <ul>
             <li><a routerLink='/' routerLinkActive="active" >Home</a></li>
             <!-- Dropdown menu for user account -->
-            <li class="dropdown-menu" (click)="toggleDropdown()">
+            <!-- <li class="dropdown-menu" (click)="toggleDropdown()">
                 <div>
                     <div  *ngIf="dumyUser">
                         <i class="fa-regular fa-user"></i>
@@ -38,9 +38,15 @@
                             (click)="logOut()">Log Out</a>
                         </li>
                 </ul>
-            </li>
+            </li> -->
         </ul>
     </nav>
+    <div *ngIf="currentUser.isLoggedIn">
+        hello {{currentUser.username}}
+    </div>
+    <div *ngIf="!currentUser.isLoggedIn">
+        please log in 
+    </div>
     <!-- Cart area -->
     <div class="cart-area">
         <a routerLink="/cart"><i class="fa-solid fa-cart-shopping"></i><span id="cart-items-count">{{total_quantity}}</span>Cart</a>

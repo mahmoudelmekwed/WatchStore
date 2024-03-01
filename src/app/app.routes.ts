@@ -3,10 +3,15 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { LoginComponent } from './login/login.component';
 import { CartComponent } from './cart/cart.component';
 import { SearchComponent } from './search/search.component';
+import { RegisterComponent } from './register/register.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 export const routes: Routes = [
-    { path: '' , component : ProductListComponent},
+    { path: 'products' , component : ProductListComponent},
+    { path: '' , redirectTo: 'products' , pathMatch:'full'},
+    { path: 'products/:id' , component : ProductDetailComponent},
     { path: 'login' , component : LoginComponent},
     { path: 'cart' , component : CartComponent},
-    { path: 'search' , component :SearchComponent }
+    { path: 'search' , component :SearchComponent },
+    { path: 'register' , component :RegisterComponent }
 ];

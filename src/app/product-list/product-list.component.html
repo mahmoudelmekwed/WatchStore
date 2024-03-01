@@ -2,17 +2,17 @@
     <div *ngFor="let product of products">
         <li>
             <!-- Link to product detail -->
-            <a href="" routerLink="" routerLinkActive="router-link-active" >
+            <a href="" [routerLink]="['/products' , product.id]" routerLinkActive="router-link-active" >
                 <img src="{{ product.image }}" alt="{{ product.name }}">
             </a>
             <h2>{{ product.name }}</h2>
             <!-- Display product price -->
             <p>Price per unit: {{product.price}} USD</p>
-            <p class="price">Total price: <span id="price-{{ product.id }}">{{ calculateTotalPrice(product) | number: '1.2-2' }}</span> USD</p>
+            <p class="price">Total price: <span id="price-{{ product.id }}">{{calculateTotalPrice(product) | number: '1.2-2' }}</span> USD</p>
             <!-- Form to add product to cart -->
             <form>
                 <label for="quantity">Quantity:</label>
-                <select [(ngModel)]="product.quantity" [ngModelOptions]="{ standalone: true }">
+                <select [(ngModel)]="product.quantity" [ngModelOptions]="{ standalone: true }" (change)="onQuatityChange(product.quantity, product.id)">
                     <option *ngFor="let option of quantityOptions" [value]="option">{{ option }}</option>
                 </select>
                 <button type="submit" class="add-to-cart">Add to Cart</button>

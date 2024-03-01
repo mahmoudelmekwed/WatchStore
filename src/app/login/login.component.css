@@ -1,0 +1,85 @@
+/* Styling for the entire webpage body */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.login-page{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50% , 0);
+}
+/* Styling for the login form container */
+
+.login-form {
+    background: #f9f9f9;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 400px;
+}
+
+/* Styling for text input fields */
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Styling for error message */
+
+.error{
+    color: red;
+}
+
+/* Styling for the login button */
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 4px; 
+    background-color: #f90; 
+    color: white; 
+    font-size: 18px; 
+    cursor: pointer; 
+}
+
+/* Hover effect for the login button */
+
+button:hover {
+    background-color: rgb(238, 162, 62); 
+}
+
+/* Styling for the registration section below the login form */
+
+.register-section {
+    text-align: center; 
+    margin-top: 20px; 
+}
+
+/* Styling for registration link */
+
+.register-section a {
+    color: #f90;
+    text-decoration: none;
+}
+
+/* Hover effect for registration link */
+
+.register-section a:hover {
+    text-decoration: underline; 
+}

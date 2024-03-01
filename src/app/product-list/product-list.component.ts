@@ -1,31 +1,43 @@
-import { Component , OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product';
 import { ProductService } from '../services/product.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './product-list.component.html',
-  styleUrl: './product-list.component.css'
+  styleUrl: './product-list.component.css',
 })
 export class ProductListComponent implements OnInit {
-
-  products! : Product[];
+  products!: Product[];
   quantityOptions!: number[];
+  selectedQuantity: number = 1;
 
-  constructor(private productservice : ProductService){}
+  constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
-      this.productservice.getProducts().subscribe(data => this.products = data);
-      this.quantityOptions = Array.from({length: 10}, (_, i) => i + 1);
+    this.productService
+      .getProducts()
+      .subscribe((data) => (this.products = data));
+    this.quantityOptions = Array.from({ length: 10 }, (_, i) => i + 1);
+    // this.productService.selectedQuantity$.subscribe(quantity => {
+    //   this.selectedQuantity = quantity;
+    // });
   }
 
-
-  calculateTotalPrice(product: Product): number {
-    return this.productservice.calculateTotalPrice(product);
+  calculateTotalPrice(product: Product) {
+    return product.price * product.quantity
   }
-  
+
+  updateQuantity(): void {
+    // this.productService.setSelectedQuantity(this.selectedQuantity);
+  }
+
+  onQuatityChange(quantity: number, productId: any) {
+    this.productService.onQuatityChange(quantity, productId);
+  }
 }
