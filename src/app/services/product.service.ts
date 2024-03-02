@@ -34,9 +34,9 @@ export class ProductService {
     );
   }
 
-  // calculateTotalPrice(product: Product): number {
-  //   return product.price * product.quantity;
-  // }
+  calculateTotalPrice(product: Product): number {
+    return product.price * product.quantity;
+  }
 
   // setSelectedQuantity(quantity: number) {
   //   this.selectedQuantitySubject.next(quantity);

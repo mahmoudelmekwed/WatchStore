@@ -21,13 +21,10 @@ export class ProductDetailComponent {
   constructor(private route: ActivatedRoute, private productService: ProductService) { }
 
   ngOnInit(): void {
-    // Get the productId from the route parameters
     this.route.params.subscribe(params => {
-      this.productId = +params['id']; // Convert the id to a number
-      // Use the productId to fetch the corresponding product
+      this.productId = +params['id'];
       this.productService.getProductById(this.productId).subscribe(product => {
         this.product = product as Product;
-        //  this.selectedQuantity = this.productService.getSelectedQuantity();
       });
     });
     this.quantityOptions = Array.from({length: 10}, (_, i) => i + 1);
@@ -35,7 +32,7 @@ export class ProductDetailComponent {
 
   calculateTotalPrice(): any {
     if(this.product){
-      // return this.productService.calculateTotalPrice(this.product).toFixed(2);
+      return this.productService.calculateTotalPrice(this.product).toFixed(2);
     }  
   }
 

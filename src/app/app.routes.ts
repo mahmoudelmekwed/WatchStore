@@ -11,7 +11,7 @@ export const routes: Routes = [
     { path: '' , redirectTo: 'products' , pathMatch:'full'},
     { path: 'products/:id' , component : ProductDetailComponent},
     { path: 'login' , component : LoginComponent},
-    { path: 'cart' , component : CartComponent},
     { path: 'search' , component :SearchComponent },
+    { path: 'cart' , component : CartComponent},
     { path: 'register' , component :RegisterComponent }
 ];

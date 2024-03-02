@@ -20,17 +20,12 @@ export class ProductListComponent implements OnInit {
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
-    this.productService
-      .getProducts()
-      .subscribe((data) => (this.products = data));
+    this.productService.getProducts().subscribe((data) => (this.products = data));
     this.quantityOptions = Array.from({ length: 10 }, (_, i) => i + 1);
-    // this.productService.selectedQuantity$.subscribe(quantity => {
-    //   this.selectedQuantity = quantity;
-    // });
   }
 
   calculateTotalPrice(product: Product) {
-    return product.price * product.quantity
+    return this.productService.calculateTotalPrice(product)
   }
 
   updateQuantity(): void {

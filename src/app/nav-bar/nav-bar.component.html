@@ -5,15 +5,15 @@
     </a>
     <!-- Search area -->
     <div class="search-area">
-        <form action="/">
-            <input type="text" name="product_to_find" id="product_to_find" placeholder="Search products">
+        <form (submit)="onSearch(searchTerm.value , $event)">
+            <input type="text" #searchTerm placeholder="Search products">
             <button type="submit" id="submitButton">Search</button>
         </form> 
     </div>
     <!-- Navigation menu -->
     <nav>   
         <ul>
-            <li><a routerLink='/' routerLinkActive="active" >Home</a></li>
+            <li><a routerLink='/' routerLinkActive="active">Home</a></li>
             <!-- Dropdown menu for user account -->
             <!-- <li class="dropdown-menu" (click)="toggleDropdown()">
                 <div>

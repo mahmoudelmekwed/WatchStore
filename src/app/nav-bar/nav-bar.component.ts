@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import {  Router, RouterLink} from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { User } from '../models/user';
 
@@ -16,7 +16,14 @@ export class NavBarComponent {
   isDropdownOpen: boolean = false;
   currentUser = this.authService.currentUser;
   // dumyUser: boolean = true // Temp solution for login/logout
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService , private router : Router) {}
+
+  onSearch(term: string , event: Event) {
+    event.preventDefault();
+    this.router.navigate(['/search'], { queryParams: { term: term } });
+    console.log(term)
+  }
+
   isLoggedIn() {
     return this.authService.currentUser?.isLoggedIn;
   }
@@ -33,10 +40,12 @@ export class NavBarComponent {
     this.isDropdownOpen = !this.isDropdownOpen;
   }
   ngOnInit(){
-    setTimeout(()=>{
-      let user = new User('ahmed' , 'pass', 'eefef@gmail.com',true )
-      this.currentUser = user;
-      this.authService.currentUser = user;
-    },2000)
+    // setTimeout(()=>{
+    //   let user = new User('ahmed' , 'pass', 'eefef@gmail.com',true )
+    //   this.currentUser = user;
+    //   this.authService.currentUser = user;
+    // },2000)
   }
+
+
 }
