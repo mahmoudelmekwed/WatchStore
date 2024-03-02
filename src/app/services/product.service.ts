@@ -16,7 +16,6 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<Product[]> {
-    debugger
     if (this.products.length > 0) {
       return of(this.products);
     } else {
