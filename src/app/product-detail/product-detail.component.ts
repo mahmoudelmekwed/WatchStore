@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../services/product.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -18,13 +19,16 @@ export class ProductDetailComponent {
   quantityOptions!: number[];
   selectedQuantity: number = 1;
 
-  constructor(private route: ActivatedRoute, private productService: ProductService) { }
+  constructor(
+    private route: ActivatedRoute, 
+    private productService: ProductService,
+    private cartService: CartService) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.productId = +params['id'];
       this.productService.getProductById(this.productId).subscribe(product => {
-        this.product = product as Product;
+        this.product = product as Product
       });
     });
     this.quantityOptions = Array.from({length: 10}, (_, i) => i + 1);
@@ -37,7 +41,11 @@ export class ProductDetailComponent {
   }
 
   updateQuantity(): void {
-    // this.productService.setSelectedQuantity(this.selectedQuantity);
+    this.productService.selectedQuantitySubject.next(this.product.quantity)
+  }
+
+  addToCart(product:Product){
+    this.cartService.addToCart(product , product.quantity)
   }
 
 }

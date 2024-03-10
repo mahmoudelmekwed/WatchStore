@@ -1,0 +1,181 @@
+.checkout-container {
+    padding: 40px 150px;
+  }
+  
+  /* Styling for the heading within the checkout container */
+  .checkout-container h2 {
+    margin-bottom: 40px;
+  }
+  
+  /* Styling for the checkout row */
+  .checkout-row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+  
+  
+  /* Styling for the billing section */
+  .billing-section {
+    width: 60%;
+    border-radius: 4px;
+    padding: 20px 0px;
+    margin-right: 20px;
+    background-color: #e6e6e6;
+  }
+  
+  /* Styling for error messages (colored red) */
+  em.error-message {
+    color: red;
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .billing-section input.error,
+  input.error,
+  .error{
+    border: 1px solid red;
+  }
+  
+  /* Styling for form labels field within the billing section */
+  .billing-section label{
+    display: block;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  
+  /* Styling for input fields within the billing section */
+  .billing-section input {
+    padding: 7px;
+    width: 350px;
+    border-radius: 4px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  
+  
+  /* Styling for the payment methods section */
+  .payment-methods {
+    font-family: Arial, sans-serif;
+    margin: auto;
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  /* Styling for payment method headings */
+  .payment-methods h3 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  /* Styling for card details section */
+  .card-details {
+    margin-top: 10px;
+    padding: 20px 50px;
+    border-radius: 4px;
+  }
+  
+  /* Styling for form fields within card details section */
+  .field {
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for form field labels */
+  .field label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  /* Styling for form field input elements */
+  .field input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Styling for field groups */
+  .field-group {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .field-group .field {
+    flex: 1;
+  }
+  
+  .field-group .expiry {
+    margin-right: 10px;
+  }
+
+  #expiry_date{
+    width: 90%;
+  }
+  
+  #cvc{
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .cvc{
+    margin-left: 5%;
+  }
+  /* Styling for save card checkbox */
+  .save-card {
+    margin-top: 10px;
+  }
+  
+  /* Styling for the summary section */
+  .summary-section {
+    width: 35%;
+    padding: 20px;
+    background: #e6e6e6;
+    border-radius: 4px;
+  }
+  
+  /* Styling for heading within the summary section */
+  .summary-section h2 {
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for paragraphs within the summary section */
+  .summary-section p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for the total price element */
+  #total-price {
+    color: #000;
+  }
+  
+  #confirm:disabled{
+    background-color: #444;
+  }
+  
+  /* Styling for the complete checkout button */
+  .complete-checkout {
+    background-color: #f90;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 3px 3px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  /* Hover effect for the complete checkout button */
+  .complete-checkout:hover {
+    background-color: rgb(238, 162, 62);
+  }
+  

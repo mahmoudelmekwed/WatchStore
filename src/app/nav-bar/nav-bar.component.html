@@ -15,40 +15,40 @@
         <ul>
             <li><a routerLink='/' routerLinkActive="active">Home</a></li>
             <!-- Dropdown menu for user account -->
-            <!-- <li class="dropdown-menu" (click)="toggleDropdown()">
+            <li class="dropdown-menu">
                 <div>
-                    <div  *ngIf="dumyUser">
+                    <div  *ngIf="">
                         <i class="fa-regular fa-user"></i>
                         Hi {{ 'userName' }}
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
-                    <div *ngIf="!dumyUser">
+                    <div>
                         <i class="fa-regular fa-user"></i>
                         Account
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
                 </div>
-                <ul class="toggle-menu closed" [class.closed]="!isDropdownOpen">
-                        <li class="nav-item" *ngIf="!dumyUser" (click)="dumyUser = !dumyUser">
+                <ul class="toggle-menu closed">
+                        <li class="nav-item" *ngIf="" >
                         <a class="nav-link"
                         routerLink="/login">Log In</a>
                         </li>
-                        <li class="nav-item" *ngIf="dumyUser" (click)="dumyUser = !dumyUser">
+                        <li class="nav-item" *ngIf="">
                         <a class="nav-link"
                             (click)="logOut()">Log Out</a>
                         </li>
                 </ul>
-            </li> -->
+            </li>
         </ul>
     </nav>
-    <div *ngIf="currentUser.isLoggedIn">
+    <!-- <div *ngIf="currentUser.isLoggedIn">
         hello {{currentUser.username}}
     </div>
     <div *ngIf="!currentUser.isLoggedIn">
         please log in 
-    </div>
+    </div> -->
     <!-- Cart area -->
     <div class="cart-area">
-        <a routerLink="/cart"><i class="fa-solid fa-cart-shopping"></i><span id="cart-items-count">{{total_quantity}}</span>Cart</a>
+        <a routerLink="/cart"><i class="fa-solid fa-cart-shopping"></i><span id="cart-items-count">{{calculateCartAmount()}}</span>Cart</a>
     </div>
 </div>

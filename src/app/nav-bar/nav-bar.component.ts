@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import {  Router, RouterLink} from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { User } from '../models/user';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -16,12 +17,20 @@ export class NavBarComponent {
   isDropdownOpen: boolean = false;
   currentUser = this.authService.currentUser;
   // dumyUser: boolean = true // Temp solution for login/logout
-  constructor(private authService: AuthService , private router : Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private cartService: CartService){}
 
   onSearch(term: string , event: Event) {
     event.preventDefault();
     this.router.navigate(['/search'], { queryParams: { term: term } });
     console.log(term)
+  }
+
+  calculateCartAmount(): number{
+    // console.log('i was called here ');
+    return this.cartService.calculateCartAmount()
   }
 
   isLoggedIn() {

@@ -1,1 +1,72 @@
-<p>checkout works!</p>
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <div class="checkout-container">
+        <h2>Checkout</h2>
+        <!-- Billing and payment section -->
+        <div class="checkout-row">
+            <div class="billing-section">
+                <!-- Form for billing information -->
+                    <div>
+                        <label for="name">Name:</label>
+                        <input formControlName="name" [class.error]="checkoutForm.controls.name.invalid && checkoutForm.controls.name.touched" type="text" id="name" name="name" required>
+                        <em class="error-message" *ngIf="checkoutForm.controls.name.invalid && checkoutForm.controls.name.touched">Please enter your name</em>
+                    </div>
+                    <div>
+                    <label for="address">Address:</label>
+                    <input formControlName="address"  [class.error]="checkoutForm.controls.address.invalid && checkoutForm.controls.address.touched" type="text" id="address" name="address" required>
+                    <em class="error-message" *ngIf="checkoutForm.controls.address.invalid && checkoutForm.controls.address.touched">Please enter your address</em>
+                    </div>
+                    <div>
+                    <label for="telephone">Telephone:</label>
+                    <input formControlName="telephone"  [class.error]="checkoutForm.controls.telephone.invalid && checkoutForm.controls.telephone.touched" type="tel" id="telephone" name="telephone" required>
+                    <em class="error-message" *ngIf="checkoutForm.controls.telephone.invalid && checkoutForm.controls.telephone.touched">Please enter your telephone number</em>
+                    </div>
+                <!-- Payment methods section -->
+                <div class="payment-methods">
+                    <h3>Payment method</h3>
+                    <!-- Radio button for card payment option -->
+                    <div formGroupName="paymentMethod"  class="payment-method">
+                      <!-- <input type="radio" id="new_card" name="payment" value="new_card"> -->
+                      <h4 class="radio-label">Credit/Debit Card</h4>
+                      <!-- Card details input fields -->
+                      <div class="card-details">
+                        <div class="field">
+                          <label for="name_on_card">Name on card</label>
+                          <input formControlName="nameOnCard"  [class.error]="checkoutForm.get('paymentMethod.nameOnCard')?.invalid && checkoutForm.get('paymentMethod.nameOnCard')?.touched" type="text" id="name_on_card" placeholder="Name on card" required>
+                          <em class="error-message" *ngIf="checkoutForm.get('paymentMethod.nameOnCard')?.invalid && checkoutForm.get('paymentMethod.nameOnCard')?.touched">Please enter a valid name on card</em>
+                        </div>
+                        <div class="field">
+                          <label for="card_number">Card number</label>
+                          <input formControlName="cardNumber"  [class.error]="checkoutForm.get('paymentMethod.cardNumber')?.invalid && checkoutForm.get('paymentMethod.cardNumber')?.touched" type="text" id="card_number" placeholder="1234 5678 9012 3456" name="card_number"  minlength="16" maxlength="16" required>
+                          <em class="error-message" *ngIf="checkoutForm.get('paymentMethod.cardNumber')?.invalid && checkoutForm.get('paymentMethod.cardNumber')?.touched">Please enter a valid card number</em>
+                        </div>
+                        <div class="field-group">
+                          <div class="field expiry">
+                            <label for="expiry_date">Expiry date</label>
+                            <input formControlName="expiryDate" [class.error]="checkoutForm.get('paymentMethod.expiryDate')?.invalid && checkoutForm.get('paymentMethod.expiryDate')?.touched" type="month" id="expiry_date"   name="expiry_date" required>
+                            <em class="error-message" *ngIf="checkoutForm.get('paymentMethod.expiryDate')?.invalid && checkoutForm.get('paymentMethod.expiryDate')?.touched">Please enter a valid expiry date</em>
+                          </div>
+                          <div class="field cvc">
+                            <label for="cvc">CVC/CVV</label>
+                            <input formControlName="cvc" [class.error]="checkoutForm.get('paymentMethod.cvc')?.invalid && checkoutForm.get('paymentMethod.cvc')?.touched" type="text" id="cvc" placeholder="CVC" name="cvc" maxlength="3" required>
+                            <em class="error-message cvc" *ngIf="checkoutForm.get('paymentMethod.cvc')?.invalid && checkoutForm.get('paymentMethod.cvc')?.touched">Please enter a valid CVC/CVV</em>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          </div>
+        <!-- Order summary section -->
+        <div class="summary-section">
+          <h2>Summary</h2>
+          <!-- Display total price -->
+          <p>Total: <span id="total-price">{{calculateTotal().toFixed(2)}}</span> USD</p>
+          <!-- Form to complete checkout -->
+  
+          <button type="submit" class="complete-checkout" id="confirm" [disabled]="checkoutForm.invalid">Complete Checkout</button>
+          
+          <!-- Additional information -->
+          <p>30-Day Money-Back Guarantee</p>
+        </div>
+        </div>
+    </div>
+</form>

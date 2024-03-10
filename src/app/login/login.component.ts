@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup , ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup , ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -12,12 +12,15 @@ import { RouterModule } from '@angular/router';
 })
 export class LoginComponent {
 
-  applyForm = new FormGroup(
+  applyForm = this.fb.group(
     {
-      name: new FormControl(''),
-      password: new FormControl('')
+      name: ['' , Validators.required],
+      password: ['' , Validators.required]
     }
   )
+
+  constructor(private fb: FormBuilder){}
+
 
   saveContact(){
     console.log(this.applyForm.controls.name.value)

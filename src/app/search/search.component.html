@@ -1,7 +1,10 @@
 <!-- Container for displaying search results -->
+<ng-container *ngIf="(filterdProducts$ | async) as filterdProducts;">
+
+
 <div class="products-container">
     <!-- Conditional rendering based on search results -->
-        <ul class="product-list" *ngIf="filterdProducts">
+        <ul class="product-list" *ngIf="filterdProducts.length > 0 ; else noProducts ">
             <!-- Loop through each product and display its details -->
                 <li class="product-item" *ngFor="let product of filterdProducts">
                     <div class="search-item-details">
@@ -18,10 +21,15 @@
                         <select [(ngModel)]="product.quantity" [ngModelOptions]="{ standalone: true }" (change)="onQuatityChange(product.quantity, product.id)">
                             <option *ngFor="let option of quantityOptions" [value]="option">{{ option }}</option>
                         </select>
-                        <button type="submit" class="add-to-cart-button">Add to Cart</button>
+                        <button (click)="addToCart(product)"class="add-to-cart-button">Add to Cart</button>
                     </form>
                 </li>
         </ul>
         <!-- Message shown if no products are found -->
-        <p class="no-results" *ngIf="filterdProducts.length === 0">{{searchTerm}} is not found</p>
+        
 </div>
+</ng-container>
+
+<ng-template class="no-results" #noProducts>
+        {{searchTermSubject.value}}   is not found
+</ng-template>

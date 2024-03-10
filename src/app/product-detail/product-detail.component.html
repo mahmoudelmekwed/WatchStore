@@ -16,7 +16,7 @@
                     <option *ngFor="let option of quantityOptions" [value]="option">{{ option }}</option>
                 </select>
             </div>
-            <button type="submit" class="add-to-cart-button">Add to Cart</button>
+            <button (click)="addToCart(product)" class="add-to-cart-button">Add to Cart</button>
         </form>
 </div>
 

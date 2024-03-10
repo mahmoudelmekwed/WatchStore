@@ -1,1 +1,42 @@
-<p>cart works!</p>
+<h1 class="page-title" *ngIf="cartItems.length > 0">Shopping Cart</h1>
+<div id="product_id" class="cart-container" *ngIf="cartItems.length > 0">
+    <div class="cart-items" >
+    <!-- Displaying cart items -->
+            <!-- Individual cart item -->
+            <div class="cart-item" *ngFor="let item of cartItems; let i = index">
+                <div class="cart-left">
+                    <img src="{{ item.image }}" alt="{{ item.name }}">
+                    <div class="cart-item-details">
+                        <h3>{{ item.name }}</h3>
+                        <p>{{ item.description }}</p>
+                    </div>
+                </div>
+                <div class="cart-right">
+                    <p>Price per unit: {{item.price}} USD</p>
+                    <p><span class="price">Total price: {{ calculateTotalPrice(item).toFixed(2) }}</span> USD</p>
+                    <p>Quantity: {{ item.quantity }}</p>
+                    <!-- Form to remove item from cart -->
+                    <!-- <form (click)="removeFromCart(item.id)"> -->
+                        <button (click)="removeItem(i)">Remove</button>
+                    <!-- </form>    -->
+                </div>            
+            </div>
+    </div>
+    <!-- Checkout container -->
+    <div class="checkout-container">
+        <div class="total-cart">
+            <!-- Displaying total price -->
+            <h3>Total cart: {{calculateCartTotal().toFixed(2)}} USD</h3>
+        </div>
+        <!-- Checkout button -->
+        <div class="checkout">
+            <form [routerLink]="['/checkout']" routerLinkActive="router-link-active" >
+                <button type="submit" id="checkoutButton">Checkout</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="cart-empty" *ngIf="cartItems.length === 0">
+    <h1 class="title-empty">Shopping Cart</h1>
+    <p class="empty-cart">Your cart is empty.</p>
+</div>
